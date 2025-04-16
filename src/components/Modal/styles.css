@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+.Modal-Overlay{
+    background-color: rgba(0,0,0,0.2);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+}
+
+.Modal-Container {
+    text-align: left;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 5px rgb(150, 150, 150);
+}
+
+.Modal-Title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+.Task-inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    gap: 10px;
+    margin: 10px;
+}
+
+.Task-input {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: rgb(208,207,207);
+    padding: 8px;
+}
+
+.dropdown-input {
+    position: relative;
+}
+
+.dropdown-options{
+    max-height: 100px;
+    width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgb(160, 160, 160);
+    background-color: white;
+}
+
+.dropdown-option {
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: rgb(49, 92, 231);
+    color: white;
+}
+
+.errorText {
+    color: red;
+    font-size: 10px;
+    position: absolute;
+    margin: 2px;
+    top: 65px
+}
+
+.closeIcon {
+    cursor: pointer;
+}
