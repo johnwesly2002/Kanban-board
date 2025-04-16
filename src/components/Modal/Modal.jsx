@@ -26,14 +26,14 @@ export default function Modal({
 				</div>
 				<div className="Modal-Content">
 					<form>
-						{Fields.map((field) => (
-							<div key={field.key} className="Task-inputContainer">
+						{Fields.map((field, index) => (
+							<div key={index} className="Task-inputContainer">
 								<label>{field.title}</label>
 								{field.type == "text" && (
 									<input
 										className="Task-input"
 										type={field.type}
-										value={formData?.[field.title]}
+										value={formData[field.title]}
 										placeholder={field.placeholder}
 										onChange={(e) => handleChange(field, e)}
 										required={field.required}
@@ -41,34 +41,28 @@ export default function Modal({
 								)}
 								{field.type == "dropdown" && (
 									<div className="dropdown-input">
-										<input
-											className="Task-input"
-											onFocus={() => setShowoption(true)}
-											onBlur={() => setShowoption(false)}
-											value={formData?.[field.title]}
-											type={field.type}
-											placeholder={field.placeholder}
-										/>
-										{showoption && (
-											<div className="dropdown-options">
-												{field.options.map((option) => (
-													<div
-														key={option}
-														className="dropdown-option"
-														onMouseDown={() => {
-															setFormData((prev) => ({
-																...prev,
-																[field.title]: option.value,
-															}));
-															setShowoption(false);
-														}}
-													>
-														{option.value}
-													</div>
-												))}
-											</div>
-										)}
-									</div>
+                                    <select
+                                      className="Task-input"
+                                      value={formData?.[field.title] || ""}
+                                      onChange={(e) => {
+                                        setFormData((prev) => ({
+                                          ...prev,
+                                          [field.title]: e.target.value,
+                                        }));
+                                      }}
+                                      onFocus={() => setShowoption(true)} 
+                                      onBlur={() => setShowoption(false)}
+                                    >
+                                      <option value="" disabled hidden>
+                                        {field.placeholder} 
+                                      </option>
+                                      {field.options.map((option) => (
+                                        <option key={option.value} value={option.value}>
+                                          {option.value}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </div>
 								)}
 								{showErrText?.[field.title] && (
 									<span className="errorText">{field.ErrText}</span>

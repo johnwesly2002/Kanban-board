@@ -1,17 +1,58 @@
-<<<<<<< HEAD
-# React + Vite
+# Kanban Board Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Kanban board built with **Vite**, **React** (JavaScript), and **Drag-and-Drop** functionality. The application allows users to manage tasks with three phases: **Todo**, **In Progress**, and **Done**. Users can add new tasks and drag them between these phases.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Tasks**: Add tasks to the board with necessary details.
+- **Drag and Drop**: Move tasks between "Todo", "In Progress", and "Done" phases using drag-and-drop.
+- **Task Management**: Each task is categorized based on the current status (phase).
+- **Responsive**: Designed to work on desktop and mobile screens.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Kanban-board
-Developed a Kanban board kind of project
->>>>>>> a83d72c9af382fb81cdc0b47b7a172d5f7d036d6
+## Project Structure
+
+```bash
+src/
+  ├── assets/        # Static assets like images, icons, etc.
+  ├── components/    # All the React components used in the app
+  └── Kanban-board/  # The main Kanban board logic and layout]
+
+```
+## File Structure
+```bash
+Kanban-component/
+  ├── KanbanBoard.jsx/ # Html Code.
+  ├── styles.css/    # The Css Styles of component
+  └── useKanbanBoard.js/  # Logic Part of the Component
+
+```
+
+---
+### Installation
+
+
+1. Clone the Repository
+Start by cloning the project repository to your local machine:
+git clone https://github.com/johnwesly2002/Kanban-board.git
+cd Kanban-board
+2. Install Dependencies
+Run the following command to install the project dependencies:
+
+```bash
+npm install
+```
+   or, if you're using Yarn:
+
+```bash
+yarn install
+```
+
+3. Run the Development Server
+To start the development server, run:
+
+```bash
+npm run dev
+```
+

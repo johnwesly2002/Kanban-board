@@ -35,7 +35,11 @@ const useModal = ({
 					{ ...formData, id: Date.now() },
 				],
 			}));
-			setFormData({});
+			setFormData({
+				title: "",
+				Description: "",
+				Status: "",
+			});
 		}
 	};
 

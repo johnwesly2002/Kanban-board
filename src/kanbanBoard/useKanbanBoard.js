@@ -46,7 +46,11 @@ const useKanbanBoard = () => {
 	];
 
 	const [showModal, setShowModal] = useState(false);
-	const [formData, setFormData] = useState({});
+	const [formData, setFormData] = useState({
+		title: "",
+		Description: "",
+		Status: "",
+	});
 	const [draggedTaskId, setDraggedTaskId] = useState(null);
 
 	const fetchData = async () => {
